@@ -72,7 +72,8 @@
         .then((userCredential) => {
           const user = userCredential.user;
           alert('Login bem-sucedido!');
-          window.location.href = "https://sites.google.com/d/19bA75oic07nueiQ_pA_Cz6W5LJ3buqsV/p/1MguWXPuVjfcdujoiXb5THCmGKTwbdjtw/edit?pli=1";
+         window.location.href = "https://sites.google.com/d/19bA75oic07nueiQ_pA_Cz6W5LJ3buqsV/p/1MguWXPuVjfcdujoiXb5THCmGKTwbdjtw/edit?pli=1&view=registos_movimentacao";
+//       window.location.href = "https://sites.google.com/d/19bA75oic07nueiQ_pA_Cz6W5LJ3buqsV/p/1MguWXPuVjfcdujoiXb5THCmGKTwbdjtw/edit?pli=1";
         })
         .catch((error) => {
           alert('Erro no login: ' + error.message);
