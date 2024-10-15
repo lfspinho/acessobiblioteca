@@ -2,22 +2,66 @@
 <html>
 <head>
   <style>
-    body {
-      background-color: #f0f0f0;
-      transition: background-image 1s ease-in-out; /* Transição suave */
+    /* Animação para suavizar a exibição da imagem de fundo */
+    @keyframes fadeInBackground {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
     }
-    
-    .loaded {
+
+    body {
       background-image: url('https://raw.githubusercontent.com/lfspinho/acessobiblioteca/refs/heads/main/BE.png');
       background-size: cover; /* Tamanho da imagem de fundo */
       background-position: center; /* Posiciona a imagem no centro */
       background-repeat: no-repeat; /* Evita repetição da imagem */
       background-attachment: fixed; /* Fixa a imagem ao fundo */
+      background-color: #f0f0f0; /* Cor de fundo suave */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      animation: fadeInBackground 2s ease-in-out; /* Animação suave de entrada */
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    .login-container {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      max-width: 300px;
+      width: 100%;
+    }
+
+    label, input {
+      width: 100%;
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
     }
   </style>
+
   <title>Página de Login</title>
   <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-auth.js"></script>
+
   <script>
     // Configurações do Firebase
     const firebaseConfig = {
@@ -47,11 +91,6 @@
           alert('Erro no login: ' + error.message);
         });
     }
-
-    // Função para carregar a imagem de fundo após a página ter sido completamente carregada
-    window.onload = function() {
-      document.body.classList.add("loaded");
-    };
   </script>
 </head>
 <body>
@@ -67,5 +106,4 @@
   </div>
 </body>
 </html>
-
 
