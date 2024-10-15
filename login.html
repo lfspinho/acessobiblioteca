@@ -4,8 +4,53 @@
   <title>Página de Login</title>
   <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-auth.js"></script>
+  <style>
+    /* Estilos para centralizar o formulário */
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    .login-container {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      max-width: 300px;
+      width: 100%;
+    }
+
+    label, input {
+      width: 100%;
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
   <script>
-    // Configurações do Firebase (substituir pelos dados do teu projeto Firebase)
+    // Configurações do Firebase
     const firebaseConfig = {
       apiKey: "AIzaSyDQAtwrKEj5MMVQLz5AqfWo12eZl_rYToU",
       authDomain: "registosrestritos.firebaseapp.com",
@@ -14,6 +59,7 @@
       messagingSenderId: "77788477812",
       appId: "1:77788477812:web:3c34389044d6f24c875421"
     };
+
     // Inicializar Firebase
     firebase.initializeApp(firebaseConfig);
 
@@ -24,10 +70,8 @@
 
       firebase.auth().signInWithEmailAndPassword(email, password)
         .then((userCredential) => {
-          // Autenticação bem-sucedida
           const user = userCredential.user;
           alert('Login bem-sucedido!');
-          // Aqui podes redirecionar para a página restrita após o login
           window.location.href = "https://sites.google.com/d/19bA75oic07nueiQ_pA_Cz6W5LJ3buqsV/p/1MguWXPuVjfcdujoiXb5THCmGKTwbdjtw/edit?pli=1";
         })
         .catch((error) => {
@@ -37,15 +81,15 @@
   </script>
 </head>
 <body>
-  <h1>Login para Registos da Biblioteca</h1>
-  <form>
-    <label for="username">E-mail:</label>
-    <input type="email" id="username" placeholder="Insira o seu e-mail"><br>
-    <label for="password">Palavra-passe:</label>
-    <input type="password" id="password" placeholder="Insira a sua palavra-passe"><br>
-    <button type="button" onclick="login()">Entrar</button>
-  </form>
-
-  <!-- Aqui podes colocar o conteúdo que será exibido após o login, se necessário -->
+  <div class="login-container">
+    <h1>Login para Registos da Biblioteca</h1>
+    <form>
+      <label for="username">E-mail:</label>
+      <input type="email" id="username" placeholder="Insira o seu e-mail" required><br>
+      <label for="password">Palavra-passe:</label>
+      <input type="password" id="password" placeholder="Insira a sua palavra-passe" required><br>
+      <button type="button" onclick="login()">Entrar</button>
+    </form>
+  </div>
 </body>
 </html>
