@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Página de Login</title>
+  <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-auth.js"></script>
+  <script>
+    // Configurações do Firebase (substituir pelos dados do teu projeto Firebase)
+    const firebaseConfig = {
+      apiKey: "AIzaSyDQAtwrKEj5MMVQLz5AqfWo12eZl_rYToU",
+      authDomain: "registosrestritos.firebaseapp.com",
+      projectId: "registosrestritos",
+      storageBucket: "registosrestritos.appspot.com",
+      messagingSenderId: "77788477812",
+      appId: "1:77788477812:web:3c34389044d6f24c875421"
+    };
+    // Inicializar Firebase
+    firebase.initializeApp(firebaseConfig);
+
+    // Função para realizar o login com Firebase
+    function login() {
+      const email = document.getElementById("username").value;
+      const password = document.getElementById("password").value;
+
+      firebase.auth().signInWithEmailAndPassword(email, password)
+        .then((userCredential) => {
+          // Autenticação bem-sucedida
+          const user = userCredential.user;
+          alert('Login bem-sucedido!');
+          // Aqui podes redirecionar para a página restrita após o login
+          window.location.href = "https://sites.google.com/d/19bA75oic07nueiQ_pA_Cz6W5LJ3buqsV/p/1MguWXPuVjfcdujoiXb5THCmGKTwbdjtw/edit?pli=1";
+        })
+        .catch((error) => {
+          alert('Erro no login: ' + error.message);
+        });
+    }
+  </script>
+</head>
+<body>
+  <h1>Login para Registos da Biblioteca</h1>
+  <form>
+    <label for="username">E-mail:</label>
+    <input type="email" id="username" placeholder="Insira o seu e-mail"><br>
+    <label for="password">Palavra-passe:</label>
+    <input type="password" id="password" placeholder="Insira a sua palavra-passe"><br>
+    <button type="button" onclick="login()">Entrar</button>
+  </form>
+
+  <!-- Aqui podes colocar o conteúdo que será exibido após o login, se necessário -->
+</body>
+</html>
