@@ -2,29 +2,19 @@
 <html>
 <head>
   <style>
-  body {
-    background-image: url('https://raw.githubusercontent.com/lfspinho/acessobiblioteca/refs/heads/main/BE.png');
-    background-size: cover; /* Tamanho da imagem de fundo */
-    background-position: center; /* Posiciona a imagem no centro */
-    background-repeat: no-repeat; /* Evita repetição da imagem */
-    background-attachment: fixed; /* Fixa a imagem ao fundo */
-    background-color: #f0f0f0; /* Uma cor de fundo suave para complementar */
-  }
-</style>
-
-  <title>Página de Login</title>
-  <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-auth.js"></script>
-  <style>
-    /* Estilos para centralizar o formulário */
     body {
+      background-image: url('https://raw.githubusercontent.com/lfspinho/acessobiblioteca/refs/heads/main/BE.png');
+      background-size: cover; /* Tamanho da imagem de fundo */
+      background-position: center; /* Posiciona a imagem no centro */
+      background-repeat: no-repeat; /* Evita repetição da imagem */
+      background-attachment: fixed; /* Fixa a imagem ao fundo */
+      background-color: #f0f0f0; /* Cor de fundo suave para complementar */
       display: flex;
       justify-content: center;
       align-items: center;
       height: 100vh;
       margin: 0;
       font-family: Arial, sans-serif;
-      background-color: #f0f0f0;
     }
 
     h1 {
@@ -60,6 +50,11 @@
       background-color: #0056b3;
     }
   </style>
+
+  <title>Página de Login</title>
+  <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-auth.js"></script>
+
   <script>
     // Configurações do Firebase
     const firebaseConfig = {
@@ -83,8 +78,7 @@
         .then((userCredential) => {
           const user = userCredential.user;
           alert('Login bem-sucedido!');
-         window.location.href = "https://sites.google.com/d/19bA75oic07nueiQ_pA_Cz6W5LJ3buqsV/p/1MguWXPuVjfcdujoiXb5THCmGKTwbdjtw/edit?pli=1&view=registos_movimentacao";
-//       window.location.href = "https://sites.google.com/d/19bA75oic07nueiQ_pA_Cz6W5LJ3buqsV/p/1MguWXPuVjfcdujoiXb5THCmGKTwbdjtw/edit?pli=1";
+          window.location.href = "https://sites.google.com/d/19bA75oic07nueiQ_pA_Cz6W5LJ3buqsV/p/1MguWXPuVjfcdujoiXb5THCmGKTwbdjtw/edit?pli=1&view=registos_movimentacao";
         })
         .catch((error) => {
           alert('Erro no login: ' + error.message);
