@@ -1,27 +1,17 @@
+
+
 <!DOCTYPE html>
 <html>
 <head>
-  <style>
-<head>  
-  <style>
-    body {
-    }
-  </style>
-  
-  <title>Página de Login</title>
-  <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-auth.js"></script>    
-  body {
-    background-color: #f0f0f0; /* Uma cor de fundo suave para complementar */
-  }
-</style>
-
   <title>Página de Login</title>
   <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-auth.js"></script>
+
+  <!-- Estilos CSS -->
   <style>
-    /* Estilos para centralizar o formulário */
     body {
+      background-image: url('https://raw.githubusercontent.com/lfspinho/acessobiblioteca/refs/heads/main/BE.png');
+      background-color: #f0f0f0; /* Cor de fundo suave */
       display: flex;
       justify-content: center;
       align-items: center;
@@ -63,9 +53,9 @@
       background-color: #0056b3;
     }
   </style>
-  
+
+  <!-- Configurações do Firebase -->
   <script>
-    // Configurações do Firebase
     const firebaseConfig = {
       apiKey: "AIzaSyDQAtwrKEj5MMVQLz5AqfWo12eZl_rYToU",
       authDomain: "registosrestritos.firebaseapp.com",
@@ -78,7 +68,7 @@
     // Inicializar Firebase
     firebase.initializeApp(firebaseConfig);
 
-    // Função para realizar o login com Firebase
+    // Função de login
     function login() {
       const email = document.getElementById("username").value;
       const password = document.getElementById("password").value;
@@ -87,7 +77,7 @@
         .then((userCredential) => {
           const user = userCredential.user;
           alert('Login bem-sucedido!');
-         window.location.href = "https://sites.google.com/d/19bA75oic07nueiQ_pA_Cz6W5LJ3buqsV/p/1MguWXPuVjfcdujoiXb5THCmGKTwbdjtw/edit?pli=1&view=registos_movimentacao";
+          window.location.href = "https://sites.google.com/d/19bA75oic07nueiQ_pA_Cz6W5LJ3buqsV/p/1MguWXPuVjfcdujoiXb5THCmGKTwbdjtw/edit?pli=1&view=registos_movimentacao";
         })
         .catch((error) => {
           alert('Erro no login: ' + error.message);
@@ -107,7 +97,7 @@
     </form>
   </div>
 
-  <!-- Adiciona o JavaScript para pré-carregar a imagem aqui -->
+  <!-- Script para carregar a imagem de fundo -->
   <script>
     var img = new Image();
     img.src = "https://raw.githubusercontent.com/lfspinho/acessobiblioteca/refs/heads/main/BE.png";
@@ -118,4 +108,3 @@
 
 </body>
 </html>
-
