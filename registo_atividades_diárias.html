@@ -1,1 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registo de Atividades Diárias</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        .form-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            width: 100%;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        label {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Registo de Atividades Diárias</h2>
+        <form id="atividades-form">
+            <label for="nome">Nome do Utilizador:</label>
+            <input type="text" id="nome" name="nome" placeholder="Insira o seu nome" required>
+            
+            <label for="turma">Ano/Turma:</label>
+            <input type="text" id="turma" name="turma" placeholder="Insira a sua turma" required>
+
+            <label for="atividade">Atividades:</label>
+            <div>
+                <input type="checkbox" id="ler_ficcao" name="atividade" value="Ler Ficção">
+                <label for="ler_ficcao">Ler Ficção</label><br>
+
+                <input type="checkbox" id="ler_jornais" name="atividade" value="Ler Jornais/Revistas">
+                <label for="ler_jornais">Ler Jornais/Revistas</label><br>
+
+                <input type="checkbox" id="consultar_dic" name="atividade" value="Consultar Dicionários/Enciclopédias">
+                <label for="consultar_dic">Consultar Dicionários/Enciclopédias</label><br>
+
+                <input type="checkbox" id="estudar" name="atividade" value="Estudar/Fazer TPC">
+                <label for="estudar">Estudar/Fazer TPC</label><br>
+
+                <input type="checkbox" id="fazer_trabalhos" name="atividade" value="Fazer Trabalhos">
+                <label for="fazer_trabalhos">Fazer Trabalhos</label><br>
+
+                <input type="checkbox" id="ver_filmes" name="atividade" value="Ver Filmes/Documentários">
+                <label for="ver_filmes">Ver Filmes/Documentários</label><br>
+
+                <input type="checkbox" id="ouvir_musica" name="atividade" value="Ouvir Música">
+                <label for="ouvir_musica">Ouvir Música</label><br>
+
+                <input type="checkbox" id="jogar" name="atividade" value="Jogar">
+                <label for="jogar">Jogar</label><br>
+
+                <input type="checkbox" id="requisitar_devolver" name="atividade" value="Requisitar/Devolver Documentos">
+                <label for="requisitar_devolver">Requisitar/Devolver Documentos</label><br>
+
+                <input type="checkbox" id="outras" name="atividade" value="Outras">
+                <label for="outras">Outras</label><br>
+            </div>
+
+            <button type="submit">Submeter</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('atividades-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            // Código para enviar os dados para a Google Sheet virá aqui
+            alert('Registo submetido com sucesso!');
+        });
+    </script>
+</body>
+</html>
 
