@@ -1,106 +1,121 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Registo de Atividades Diárias</title>
   <style>
+    /* Estilos gerais */
     body {
       font-family: Arial, sans-serif;
-      margin: 20px;
+      background-color: #f0f0f0;
     }
-    h1 {
-      text-align: center;
-    }
-    .form-container {
-      max-width: 800px;
-      margin: auto;
+
+    .container {
+      max-width: 600px;
+      margin: 50px auto;
       background-color: #f9f9f9;
-      padding: 20px;
       border-radius: 8px;
+      padding: 20px;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     }
-    table {
-      width: 100%;
-      border-collapse: collapse;
+
+    h1 {
+      text-align: center;
+      color: #333;
     }
-    table th, table td {
+
+    /* Estilos para as seções */
+    .section {
+      margin-bottom: 20px;
       padding: 10px;
-      text-align: left;
+      border-radius: 8px;
     }
-    th {
-      font-size: 18px;
+
+    /* Cores de fundo distintas para cada seção */
+    .section.dados-gerais {
+      background-color: #e9ecef; /* Mais claro */
+    }
+
+    .section.data-utilizacao {
+      background-color: #dee2e6; /* Tom intermédio */
+    }
+
+    .section.atividade-documentos {
+      background-color: #ced4da; /* Mais escuro */
+    }
+
+    /* Estilos para os campos */
+    .section label {
+      display: block;
+      margin-bottom: 5px;
       font-weight: bold;
+      color: #555;
     }
-    td {
-      font-size: 16px;
-    }
-    input[type="text"], input[type="number"], select {
+
+    .section input, .section select {
       width: 100%;
       padding: 8px;
-      margin: 5px 0;
-      box-sizing: border-box;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
     }
-    label {
-      font-weight: bold;
-      font-size: 16px;
+
+    button {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
     }
-    .sub-label {
-      font-weight: normal;
-      font-size: 14px;
+
+    button:hover {
+      background-color: #0056b3;
     }
   </style>
 </head>
 <body>
-  <div class="form-container">
+
+  <div class="container">
     <h1>Registo de Atividades Diárias</h1>
-    <form>
-      <table border="1">
-        <tr>
-          <th colspan="2">Dados Gerais</th>
-        </tr>
-        <tr>
-          <td><label for="grupo">Grupo</label></td>
-          <td>
-            <select id="grupo">
-              <option value="turma">Turma</option>
-              <option value="outro">Outro Grupo</option>
-            </select>
-            <input type="number" id="numero-alunos" placeholder="N.º de Alunos">
-          </td>
-        </tr>
-        <tr>
-          <th colspan="2">Data de Utilização</th>
-        </tr>
-        <tr>
-          <td><label for="data-utilizacao">Dia</label></td>
-          <td><input type="date" id="data-utilizacao"></td>
-        </tr>
-        <tr>
-          <td><label for="hora-inicio">Hora de Início</label></td>
-          <td><input type="time" id="hora-inicio"></td>
-        </tr>
-        <tr>
-          <td><label for="hora-fim">Hora de Fim</label></td>
-          <td><input type="time" id="hora-fim"></td>
-        </tr>
-        <tr>
-          <th colspan="2">Atividade e Documentos Consultados</th>
-        </tr>
-        <tr>
-          <td><label for="atividade">Atividade</label></td>
-          <td><input type="text" id="atividade"></td>
-        </tr>
-        <tr>
-          <td><label for="num-documentos">N.º de Documentos Consultados</label></td>
-          <td><input type="number" id="num-documentos"></td>
-        </tr>
-      </table>
-      <br>
-      <button type="submit">Submeter</button>
-    </form>
+
+    <!-- Secção Dados Gerais -->
+    <div class="section dados-gerais">
+      <h3>Dados Gerais</h3>
+      <label for="grupo">Grupo</label>
+      <select id="grupo">
+        <option value="turma">Turma</option>
+        <!-- Adicionar outras opções conforme necessário -->
+      </select>
+      <label for="turma">Turma</label>
+      <input type="text" id="turma" placeholder="Número da turma">
+    </div>
+
+    <!-- Secção Data de Utilização -->
+    <div class="section data-utilizacao">
+      <h3>Data de Utilização</h3>
+      <label for="dia">Dia</label>
+      <input type="date" id="dia">
+      <label for="hora-inicio">Hora de Início</label>
+      <input type="time" id="hora-inicio">
+      <label for="hora-fim">Hora de Fim</label>
+      <input type="time" id="hora-fim">
+    </div>
+
+    <!-- Secção Atividade e Documentos Consultados -->
+    <div class="section atividade-documentos">
+      <h3>Atividade e Documentos Consultados</h3>
+      <label for="atividade">Atividade</label>
+      <input type="text" id="atividade" placeholder="Descreva a atividade">
+      <label for="num-documentos">N.º de Documentos Consultados</label>
+      <input type="number" id="num-documentos" placeholder="Quantidade de documentos">
+    </div>
+
+    <button type="submit">Submeter</button>
   </div>
+
 </body>
 </html>
+
 
 
