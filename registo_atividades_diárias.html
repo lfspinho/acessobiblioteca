@@ -48,30 +48,44 @@
       margin-bottom: 5px;
       font-weight: bold;
       color: #555;
+      text-indent: 10px; /* Ajuste para alinhar mais à esquerda */
     }
 
     .section input, .section select {
-      width: 100%;
-      padding: 8px;
+      width: 90%; /* Largura ajustada para campos */
+      padding: 6px;
       margin-bottom: 10px;
       border: 1px solid #ccc;
       border-radius: 4px;
+      display: inline-block;
+      margin-left: 10px;
+    }
+
+    /* Estilo especial para o campo de atividade */
+    #atividade {
+      width: 100%; /* O campo de atividade ocupa o máximo da secção */
     }
 
     button {
       display: block;
-      width: 100%;
+      width: 50%; /* Reduzido para 50% da largura */
       padding: 10px;
       background-color: #007bff;
       color: white;
       border: none;
       border-radius: 5px;
       cursor: pointer;
+      text-transform: uppercase; /* Colocar o texto em maiúsculas */
     }
 
     button:hover {
       background-color: #0056b3;
     }
+
+    .hidden-bar {
+      display: none; /* Esconde a barra extra */
+    }
+
   </style>
 </head>
 <body>
@@ -111,11 +125,14 @@
       <input type="number" id="num-documentos" placeholder="Quantidade de documentos">
     </div>
 
-    <button type="submit">Submeter</button>
+    <!-- Botão SUBMETER -->
+    <button type="submit">SUBMETER</button>
+
   </div>
 
 </body>
 </html>
+
 
 
 
