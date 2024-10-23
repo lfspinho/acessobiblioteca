@@ -63,7 +63,7 @@
 
     /* Largura específica de campos */
     #dia {
-      width: 50px; /* Largura ajustada para a data */
+      width: 100px; /* Largura ajustada para a data (igual ao das horas) */
     }
 
     #hora-inicio, #hora-fim {
@@ -75,7 +75,7 @@
     }
 
     #num-documentos {
-      width: 100px; /* Largura ajustada para a quantidade de documentos */
+      width: 80px; /* Largura ajustada para a quantidade de documentos */
     }
 
     #grupo {
@@ -84,7 +84,8 @@
 
     /* Estilo especial para o campo de atividade */
     #atividade {
-      width: 80%; /* O campo de atividade ocupa o máximo da secção */
+      width: calc(100% - 40px); /* Ajuste para manter a mesma distância da esquerda e direita */
+      margin-right: 10px; /* Ajusta a margem para equilibrar */
     }
 
     button {
@@ -153,7 +154,6 @@
 
 </body>
 </html>
-
 
 
 
