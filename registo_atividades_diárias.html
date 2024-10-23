@@ -62,24 +62,20 @@
     }
 
     /* Largura específica de campos */
-    #dia {
-      width: 100px; /* Largura ajustada para a data (igual ao das horas) */
-    }
-
-    #hora-inicio, #hora-fim {
-      width: 100px; /* Largura ajustada para as horas */
+    #hora {
+      width: 100px; /* Largura ajustada para a hora */
     }
 
     #turma {
-      width: 140px; /* Largura ajustada para o número da turma */
+      width: 150px; /* Largura ajustada para o número da turma */
     }
 
     #num-documentos {
-      width: 100px; /* Largura ajustada para a quantidade de documentos */
+      width: 80px; /* Largura ajustada para a quantidade de documentos */
     }
 
-    #grupo {
-      width: 150px; /* Ajustar dropdown de grupo */
+    #nome-utilizador {
+      width: 150px; /* Ajustar dropdown para o nome do utilizador */
     }
 
     /* Estilo especial para o campo de atividade */
@@ -109,6 +105,39 @@
     }
 
   </style>
+  <script>
+    // Função para preencher a data e hora automaticamente
+    window.onload = function() {
+      const now = new Date();
+      const dataCampo = document.getElementById('dia');
+      const horaCampo = document.getElementById('hora');
+
+      // Formatar data e hora
+      const dataFormatada = now.toLocaleDateString('pt-PT');
+      const horaFormatada = now.toLocaleTimeString('pt-PT', { hour: '2-digit', minute: '2-digit' });
+
+      // Definir valores automáticos
+      dataCampo.value = dataFormatada;
+      horaCampo.value = horaFormatada;
+    }
+
+    // Função para permitir dropdownlist e entrada manual
+    function criarDropdownEEntradaManual(id, opcoes) {
+      const campo = document.getElementById(id);
+      campo.innerHTML = opcoes.map(op => `<option value="${op}">${op}</option>`).join('');
+    }
+
+    // Exemplo de dados da base de dados
+    const utilizadores = ['Utilizador 1', 'Utilizador 2', 'Utilizador 3'];
+    const turmas = ['A1', 'B2', 'C3', 'D4'];
+    const atividades = ['Leitura', 'Pesquisa', 'Outro'];
+
+    window.onload = function() {
+      criarDropdownEEntradaManual('nome-utilizador', utilizadores);
+      criarDropdownEEntradaManual('turma', turmas);
+      criarDropdownEEntradaManual('atividade', atividades);
+    }
+  </script>
 </head>
 <body>
 
@@ -118,31 +147,32 @@
     <!-- Secção Dados Gerais -->
     <div class="section dados-gerais">
       <h3>Dados Gerais</h3>
-      <label for="grupo">Grupo</label>
-      <select id="grupo">
-        <option value="turma">Turma</option>
-        <!-- Adicionar outras opções conforme necessário -->
+      <label for="nome-utilizador">Nome do Utilizador</label>
+      <select id="nome-utilizador">
+        <!-- Dropdown será preenchida automaticamente -->
       </select>
       <label for="turma">Turma</label>
-      <input type="text" id="turma" placeholder="Número da turma">
+      <select id="turma">
+        <!-- Dropdown será preenchida automaticamente -->
+      </select>
     </div>
 
-    <!-- Secção Data de Utilização -->
+    <!-- Secção Data de Utilização (Automática) -->
     <div class="section data-utilizacao">
       <h3>Data de Utilização</h3>
       <label for="dia">Dia</label>
-      <input type="date" id="dia">
-      <label for="hora-inicio">Hora de Início</label>
-      <input type="time" id="hora-inicio">
-      <label for="hora-fim">Hora de Fim</label>
-      <input type="time" id="hora-fim">
+      <input type="text" id="dia" readonly> <!-- Preenchido automaticamente -->
+      <label for="hora">Hora</label>
+      <input type="text" id="hora" readonly> <!-- Preenchido automaticamente -->
     </div>
 
     <!-- Secção Atividade e Documentos Consultados -->
     <div class="section atividade-documentos">
       <h3>Atividade e Documentos Consultados</h3>
       <label for="atividade">Atividade</label>
-      <input type="text" id="atividade" placeholder="Descreva a atividade">
+      <select id="atividade">
+        <!-- Dropdown será preenchida automaticamente -->
+      </select>
       <label for="num-documentos">N.º de Documentos Consultados</label>
       <input type="number" id="num-documentos" placeholder="Quantidade de documentos">
     </div>
@@ -154,6 +184,7 @@
 
 </body>
 </html>
+
 
 
 
