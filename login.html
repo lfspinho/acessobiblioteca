@@ -66,22 +66,22 @@
     firebase.initializeApp(firebaseConfig);
 
     // Função de login
-  function login() {
-  console.log("Função login() foi chamada"); // Adiciona esta linha para confirmar o funcionamento
-  
-  const email = document.getElementById("username").value;
-  const password = document.getElementById("password").value;
+    function login() {
+      console.log("Função login() foi chamada"); // Adiciona esta linha para confirmar o funcionamento
+      
+      const email = document.getElementById("username").value;
+      const password = document.getElementById("password").value;
 
-firebase.auth().signInWithEmailAndPassword(email, password)
-  .then((userCredential) => {
-    console.log('Credenciais válidas');
-    window.location.href = "https://sites.google.com/d/19bA75oic07nueiQ_pA_Cz6W5LJ3buqsV/p/1MguWXPuVjfcdujoiXb5THCmGKTwbdjtw/edit?pli=1&view=registos_movimentacao";
-  })
-  .catch((error) => {
-    console.error('Erro no login:', error);
-    alert('Erro no login: ' + error.message);
-  });
-
+      firebase.auth().signInWithEmailAndPassword(email, password)
+        .then((userCredential) => {
+          console.log('Credenciais válidas');
+          window.location.href = "https://sites.google.com/d/19bA75oic07nueiQ_pA_Cz6W5LJ3buqsV/p/1MguWXPuVjfcdujoiXb5THCmGKTwbdjtw/edit?pli=1&view=registos_movimentacao";
+        })
+        .catch((error) => {
+          console.error('Erro no login:', error);
+          alert('Erro no login: ' + error.message);
+        });
+    } // Fechamento da função login
   </script>
 </head>
 <body>
@@ -98,12 +98,13 @@ firebase.auth().signInWithEmailAndPassword(email, password)
 
   <!-- Script para carregar a imagem de fundo -->
   <script>
- //   var img = new Image();
-//    img.src = "https://raw.githubusercontent.com/lfspinho/acessobiblioteca/refs/heads/main/BE.png";
-//    img.onload = function() {
-//      document.body.style.backgroundImage = 'url(' + img.src + ')';
-//    };
+    //   var img = new Image();
+    //    img.src = "https://raw.githubusercontent.com/lfspinho/acessobiblioteca/refs/heads/main/BE.png";
+    //    img.onload = function() {
+    //      document.body.style.backgroundImage = 'url(' + img.src + ')';
+    //    };
   </script>
 
 </body>
 </html>
+
