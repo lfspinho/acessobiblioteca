@@ -1,84 +1,49 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Página de Login</title>
+  <title>Login Simples</title>
   <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-auth.js"></script>
-  <style>
-    body {
-      background-color: #f0f0f0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      margin: 0;
-      font-family: Arial, sans-serif;
-    }
-    h1 {
-      text-align: center;
-    }
-    .login-container {
-      background-color: #fff;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      max-width: 300px;
-      width: 100%;
-    }
-    label, input {
-      width: 100%;
-      display: block;
-      margin-bottom: 10px;
-    }
-    button {
-      width: 100%;
-      padding: 10px;
-      background-color: #007bff;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-    button:hover {
-      background-color: #0056b3;
-    }
-  </style>
+
   <script>
+    // Configurações do Firebase
     const firebaseConfig = {
-      apiKey: "YOUR_API_KEY",
-      authDomain: "YOUR_AUTH_DOMAIN",
-      projectId: "YOUR_PROJECT_ID",
-      storageBucket: "YOUR_STORAGE_BUCKET",
-      messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
-      appId: "YOUR_APP_ID"
+      apiKey: "AIzaSyDQAtwrKEj5MMVQLz5AqfWo12eZl_rYToU",
+      authDomain: "registosrestritos.firebaseapp.com",
+      projectId: "registosrestritos",
+      storageBucket: "registosrestritos.appspot.com",
+      messagingSenderId: "77788477812",
+      appId: "1:77788477812:web:3c34389044d6f24c875421"
     };
+
+    // Inicializar Firebase
     firebase.initializeApp(firebaseConfig);
+    console.log("Firebase inicializado"); // Verificação da inicialização
+
+    // Função de login
     function login() {
+      console.log("Função login() chamada"); // Confirmação que a função é chamada
       const email = document.getElementById("username").value;
       const password = document.getElementById("password").value;
+
       firebase.auth().signInWithEmailAndPassword(email, password)
         .then((userCredential) => {
-          console.log('Credenciais válidas');
-          window.location.href = "https://your-redirect-url";
+          console.log("Login bem-sucedido");
+          alert("Login bem-sucedido!");
         })
         .catch((error) => {
-          console.error('Erro no login:', error);
-          alert('Erro no login: ' + error.message);
+          console.error("Erro no login:", error);
+          alert("Erro no login: " + error.message);
         });
     }
   </script>
 </head>
 <body>
-  <div class="login-container">
-    <h1>Login para Registos da Biblioteca</h1>
-    <form>
-      <label for="username">E-mail:</label>
-      <input type="email" id="username" placeholder="Insira o seu e-mail" required><br>
-      <label for="password">Palavra-passe:</label>
-      <input type="password" id="password" placeholder="Insira a sua palavra-passe" required><br>
-      <button type="button" onclick="login()">Entrar</button>
-    </form>
-  </div>
+  <h2>Login Simples</h2>
+  <input type="email" id="username" placeholder="E-mail" required><br>
+  <input type="password" id="password" placeholder="Palavra-passe" required><br>
+  <button onclick="login()">Entrar</button>
 </body>
 </html>
+
 
